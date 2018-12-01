@@ -1,5 +1,13 @@
 package main
 import "fmt"
+import "math/cmplx"
+import "math"
+
+//import (
+//    "fmt"
+//    "math"
+//    "math/cmplx"
+//)
 
 var aa = 3
 var ss = "kkk"
@@ -44,6 +52,21 @@ func consts() {
     )
 }
 
+func euler() {
+    c := 3+4i
+    fmt.Println(
+        cmplx.Exp(1i * math.Pi) + 1, cmplx.Pow(math.E, 1i * math.Pi) + 1, cmplx.Abs(c))
+    fmt.Printf(
+        "%.3f, %.3f, %d\n",
+        cmplx.Exp(1i * math.Pi) + 1, cmplx.Pow(math.E, 1i * math.Pi) + 1, cmplx.Abs(c))
+}
+
+func triangle() {
+    var a, b int = 3, 4
+    var c int
+    c = int(math.Sqrt(float64(a * a + b * b)))
+    fmt.Println(c)
+}
 
 func main() {
     fmt.Println("Hello world")
@@ -53,4 +76,7 @@ func main() {
     variableShorter()
     fmt.Println(ss, d, e, f)
     consts()
+
+    euler()
+    triangle()
 }
